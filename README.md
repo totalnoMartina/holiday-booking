@@ -1,6 +1,74 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Holiday Booking Webiste - Holiday Home
 
-Welcome Martina Grganic,
+This webpage is made for a privately owned house that rents out apartments to guests for summer holidays on the coastal side of Croatia. As clients have been using [Booking.com](https://www.booking.com/) for the past years, there has been some overlapping of bookings which were not easy to handle by the host. Through this website users can get into direct contact with the owner of the house and set up details of the booking process via email.
+
+-- images of the website here
+
+## Features
+
+### Existing features
+
+A Navbar with contact number and name of owner, Apartments images and description, Calendar with available dates and prices per night, map with exact location
+## The landing page image, contact number and nav
+
+## The Apartments in offer with description, more images for the specific apartment
+
+## The feedback from previous guests
+
+## The booking system with calendar
+
+## Admin login and features to upload new or change features of apartments
+
+### Future features
+
+* Being able to pay directly to the owners account
+* Being able to receive a text message from the booking website when someone has an enquiry on booking the apartment/s
+
+
+# Testing 
+
+Most likely unittesting
+
+- some examples of tests:
+    - Check for availability of apartments
+    - Check for booking more people than the apartments have rooms
+    - Check for overlapping bookings - booking same apartment at same times by different user
+
+## Validation testing, performance possibly
+
+## Unfixed bugs
+
+
+# Deployment Steps
+
+# Credits
+
+## Content
+
+- refer content - owner, booking.com
+
+## Media
+
+- refer owner, also booking.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
