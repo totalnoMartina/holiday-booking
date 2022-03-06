@@ -14,7 +14,7 @@ admin.site.register(Guest)
 @admin.register(Booking)
 class BookingRequest(admin.ModelAdmin):
 
-    list_display = ('booking_num', 'apartment', )
+    list_display = ('booking_num', 'apartment', 'guest_name')
 
 admin.site.register(FrontPhoto)
 admin.site.register(AddMorePhotos)
