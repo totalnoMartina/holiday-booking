@@ -14,8 +14,11 @@
     {% block extra_meta %}
     {% endblock %}
 
-    <!-- Css and Bootstrap css-->
+    <!-- Google Fonts, Css and Bootstrap css-->
     {% block corecss %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@285;300&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
@@ -36,30 +39,32 @@
 </head>
 
 <body>
-    <header class="w-75 p-3 container-fluid fixed-bottom rounded-top" style="background-color: #03406b; color: aqua;">Owner : Jasna Grganic, Klanfari 33, 51265 Dramalj, Crikvenica Phone Number: +385 51 xxx-xxx</header>
+    <header class="w-75 p-3 container-fluid rounded-top fixed-bottom" style="background-color: #052f4d; opacity: 70%; color: whitesmoke;"><strong>Owner : Jasna Grganic, Klanfari 33, 51265 Dramalj, Crikvenica Phone Number: +385 51 xxx-xxx</strong></header>
 
     {% block page_header %}
     {% endblock %}
-    <nav class="navbar navbar-dark" style="background-color: #03406b; color: aqua;">
-        <a class="navbar-brand font-weight-light" href="#">Welcome to Your Holiday, Welcome to Our Home</a>
-        <button class="navbar-toggler sticky-top shadow p-2 mb-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-dark" style="background-color: #03406b; color: aqua; opacity: 70%;">
+        <a class="navbar-brand font-weight-bold" href="{% url 'home' %}" style="width: fit-content;">Welcome to Your Holiday, Welcome to Our Home</a>
+        <button class="navbar-toggler shadow p-2 mb-2" style="border-radius: 20%; outline: none;" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Holiday Home - About<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Apartments</a>
-                <a class="nav-item nav-link" href="#">Book Now</a>
+                <a class="nav-item nav-link" href="{% url 'home' %}">Holiday Home - About<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{% url 'apartments' %}">Apartments</a>
+                <a class="nav-item nav-link" href="{% url 'booking' %}">Book Now</a>
             </div>
         </div>
     </nav>
-    <h2>The base is here</h2>
-    <img src="/static/media/mainview.jpg" style="width: 60%;">
+
+
 
     {% block content %}
     {% endblock %}
 
     {% block postloadjs %}
+    <!-- Script for the 'active' class for the navigation links -- to be found or thought of -->
+
     {% endblock %}
 
 </body>

@@ -51,6 +51,7 @@ Most likely unittesting
 
 ## Media
 
+- Fonts from [Google Fonts](https://fonts.google.com/)
 - refer owner, also booking.com
 
 

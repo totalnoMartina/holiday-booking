@@ -25,6 +25,7 @@ APARTMENTS = (('Tony', 'Tony Apartment for max4 people'),
                 ('Matea', 'Matea apartment for max4 people'),
                 ('Martina', 'Martina apartment for max6 people'))
 
+
 class Apartment(models.Model):
     """ A class to create an apartment in offer """
     apartment_name = models.CharField(choices=APARTMENTS, max_length=10, primary_key=True)
