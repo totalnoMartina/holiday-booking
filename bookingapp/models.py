@@ -33,6 +33,7 @@ class Apartment(models.Model):
     balcony = models.BooleanField(default=True, name='balcony')
     seaview = models.BooleanField(default=True, name='seaview')
     air_cond = models.BooleanField(default=True, name='AC')
+    front_image = models.ImageField('front_image', null=True)
     price = models.DecimalField(max_digits=8, decimal_places=2, blank=False)
     description = models.TextField(name='description', null=True)
 
@@ -40,7 +41,7 @@ class Apartment(models.Model):
 
     def __str__(self):
         """ Showing apartment class model created """
-        return f'An apartment named {self.apartment_name} with {self.beds} beds and the price of {self.price} euros is created'
+        return f'An apartment named {self.apartment_name} with {self.beds_nr} beds and the price of {self.price} euros is created'
 
 
 class FrontPhoto(models.Model):

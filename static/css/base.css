@@ -1,5 +1,8 @@
 body {
-    background-color: rgb(160, 235, 240);
+    background-image: url(/static/media/peninsulaview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
 }
 
 h2 {

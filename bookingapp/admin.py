@@ -6,11 +6,11 @@ from .models import Apartment, Guest, Booking, FrontPhoto, AddMorePhotos
 class ApartmentAdmin(SummernoteModelAdmin):
 
     list_display = ('apartment_name', 'price', 'beds_nr')
-    summernote_fields = ('apartment_name', 'price', 'description')
+    summernote_fields = ('description')
+    fields = ( 'front_image', )
 
 
 admin.site.register(Guest)
-
 @admin.register(Booking)
 class BookingRequest(admin.ModelAdmin):
 
@@ -18,3 +18,4 @@ class BookingRequest(admin.ModelAdmin):
 
 admin.site.register(FrontPhoto)
 admin.site.register(AddMorePhotos)
+
