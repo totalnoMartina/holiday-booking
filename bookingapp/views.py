@@ -1,8 +1,8 @@
 from django.shortcuts import render
+# from django.views import generic
 
-# Create your views here.
 
 def home(request):
-    """ A view to return the index page """
+    """ A view to return the homepage """
 
-    return render(request, 'bookingapp/base.html')
+    return render(request, 'bookingapp/index.html')
