@@ -36,24 +36,25 @@
 </head>
 
 <body>
-    <header class="container-fluid fixed-top">Top header</header>
+    <header class="w-75 p-3 container-fluid fixed-bottom rounded-top" style="background-color: #03406b; color: aqua;">Owner : Jasna Grganic, Klanfari 33, 51265 Dramalj, Crikvenica Phone Number: +385 51 xxx-xxx</header>
 
     {% block page_header %}
     {% endblock %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-dark" style="background-color: #03406b; color: aqua;">
+        <a class="navbar-brand font-weight-light" href="#">Welcome to Your Holiday, Welcome to Our Home</a>
+        <button class="navbar-toggler sticky-top shadow p-2 mb-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Holiday Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="#">Holiday Home - About<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">Apartments</a>
                 <a class="nav-item nav-link" href="#">Book Now</a>
             </div>
         </div>
     </nav>
     <h2>The base is here</h2>
+    <img src="/static/media/mainview.jpg" style="width: 60%;">
 
     {% block content %}
     {% endblock %}
