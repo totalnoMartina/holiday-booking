@@ -1,3 +1,4 @@
-nav .change-color {
-    color: pink !important;
+h2 {
+    color: rgb(145, 57, 228);
+    background-color: rgb(240, 176, 160);
 }
