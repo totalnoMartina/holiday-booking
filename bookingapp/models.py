@@ -1,4 +1,5 @@
 import uuid
+import datetime
 
 from django.db import models
 from django.core.validators import RegexValidator
@@ -65,11 +66,13 @@ class AddMorePhotos(models.Model):
 class Booking(models.Model):
     """ A class to contain booking attributes and methods """
     booking_num = models.CharField(max_length=32, null=False, editable=False, primary_key=True)
-    guest_id = models.ForeignKey(Guest, on_delete=models.CASCADE)
+    guest_name = models.ForeignKey(Guest, on_delete=models.CASCADE)
     apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE)
     start_date = models.DateField()
     end_date = models.DateField()
     booking_created_on = models.DateTimeField(auto_now_add=True)
+    booking_approved = models.BooleanField(default=False)
+
 
     def _generate_booking_num(self):
         """
@@ -78,8 +81,24 @@ class Booking(models.Model):
         return uuid.uuid4().hex.upper()
 
     def save_booking_num(self):
-        """  """
-        self.booking_num = self._generate_order_number()
+        """ Used to save the booking number as random chosen number """
+        self.booking_num = self._generate_booking_num()
         super().save(*args, **kwargs)
 
+    def __str__(self):
+        return f'{self.apartment} is booked for {self.guest_name}, with the ID of {self.booking_num}'
     
+def get_total_days(Booking):
+    """ A function to get total number of days booked """
+    start = Booking.start_date.datetime.strftime("%m/%d/%Y")
+    end = Booking.end_date.datetime.strftime("%m/%d/%Y")
+    total_days = end - start
+    
+    return total_days
+
+
+def get_total_price(Booking):
+    """ A method used to get total price """
+    total_price = Booking.total_days * Apartment.price
+
+    return f'{Booking.apartment} is booked for {Booking.guest_name}, with the ID of {Booking.booking_num} for the total of {total_price} for {Booking.total_days} days'
