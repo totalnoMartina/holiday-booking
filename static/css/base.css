@@ -1,8 +1,9 @@
 body {
     font-family: 'Lato', sans-serif;
-    background-image: url(/static/media/peninsulaview.jpg);
+    background-image: url(../media/peninsulaview.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
 }
 
 h2 {

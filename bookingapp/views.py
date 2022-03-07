@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Apartment
 # from django.views import generic
 
 
@@ -9,8 +10,13 @@ def home(request):
 
 def apartments(request):
     """ A page to view apartments """
-    
-    return render(request, 'bookingapp/apartments.html')
+    apartments = Apartment.objects.all()
+
+    template = 'bookingapp/apartments.html'
+    context = {
+        'apartments': apartments
+    }
+    return render(request, template, context)
 
 def booking(request):
     """ A page to view apartments """

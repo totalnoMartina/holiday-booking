@@ -3,8 +3,13 @@
 
 {% block content %}
 
-<h2 class="display-4 text-success">It's Apartments</h2>
-<h2 class="display-4 text-success">{{ apartment.apartment_name }}</h2>
+<h2 class="display-4 text-success">It's Apartments
+
+    {% for apartment in apartments %}
+    With {{ apartment.beds_nr }} Beds</h2>
+<h2 class="display-4 text-success">"{{ apartment.apartment_name }}" apartment for a price of {{ apartment.price }} Euros</h2>
+{% endfor %}
+<p> Details about apartment features to be here, description and directions</p>
 
 
 
