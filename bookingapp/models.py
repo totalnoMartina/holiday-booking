@@ -34,7 +34,9 @@ class Apartment(models.Model):
     balcony = models.BooleanField(default=True, name='balcony')
     seaview = models.BooleanField(default=True, name='seaview')
     air_cond = models.BooleanField(default=True, name='AC')
-    front_image = CloudinaryField('front_image') # cloudinary needs to store this
+    front_image = CloudinaryField('front_image', default='first_img') # cloudinary needs to store this
+    front_image2 = CloudinaryField('front_image2', default='second_img') # cloudinary needs to store this
+    front_image3 = CloudinaryField('front_image3', default='third_img') # cloudinary needs to store this
     price = models.DecimalField(max_digits=8, decimal_places=2, blank=False)
     description = models.TextField(name='description', null=True)
 

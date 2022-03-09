@@ -15,10 +15,10 @@ def apartments(request):
     template = 'bookingapp/apartments.html'
     context = {
         'apartments': apartments,
-        # 'front_image': front_image
+        
     }
     return render(request, template, context)
 
 def booking(request):
-    """ A page to view apartments """
+    """ A page to view bookings """
     return render(request, 'bookingapp/booking_page.html')
