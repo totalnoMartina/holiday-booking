@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
-{% load static %}
+
 
 {% block content %}
+<div container-fluid>
+    <h2 class="display-4 text-dark">Index - Front page with
+        preview of the location, front images of the house, feedback from guests that need to be
+        approved</h2>
+    {{ apartment.front_image }}
 
-<h2 class="display-4 text-dark">Index - Front page with
-    preview of the location, front images of the house, apartments,
-    link to book and send request via email, and feedback from guests that need to be
-    approved</h2>
-{{ apartment.front_image }}
-
-{% endblock %}
+    {% endblock %}
+</div>
 
 </html>

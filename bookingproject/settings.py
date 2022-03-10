@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['holiday-martina.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['holiday-martina.herokuapp.com', 'localhost', 'https://8000-totalnomartina-holidaybo-e1r4pp0sq1y.ws-eu34.gitpod.io/']
 
 
 # Application definition
@@ -182,7 +182,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '/static/media')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
