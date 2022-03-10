@@ -7,6 +7,7 @@
 
     {% block meta %}
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
@@ -44,7 +45,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="{% url 'home' %}">Holiday Home - About<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="{% url 'home' %}"><strong>Holiday Home - About</strong><span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="{% url 'apartments' %}">Apartments</a>
             <a class="nav-item nav-link" href="{% url 'booking' %}">Book Now</a>
         </div>
