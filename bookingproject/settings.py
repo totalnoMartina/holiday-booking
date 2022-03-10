@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+
 import dj_database_url
 if os.path.isfile("env.py"):
     import env
@@ -186,11 +187,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 # Cloudinary stuff
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get("CLOUD_NAME"),
-    'API_KEY': os.environ.get("API_KEY"),
-    'API_SECRET': os.environ.get("API_SECRET"),
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': os.environ.get("CLOUD_NAME"),
+#     'API_KEY': os.environ.get("API_KEY"),
+#     'API_SECRET': os.environ.get("API_SECRET"),
+# }
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
