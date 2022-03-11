@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['holiday-martina.herokuapp.com', 'localhost', 'https://8000-totalnomartina-holidaybo-e1r4pp0sq1y.ws-eu34.gitpod.io/']
+ALLOWED_HOSTS = ['holiday-martina.herokuapp.com', 'localhost', 'totalnomartina.github.io/holiday-booking']
 
 
 # Application definition
