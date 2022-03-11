@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_google_maps',
 
     'bookingapp',
 
@@ -109,6 +110,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
     
 ]
+GOOGLE_MAPS_API_KEY = 'AIzaSyCB2euvdjQ0MmClCHx99xueO2QOFStgtKA'
 
 SITE_ID = 1
 

@@ -22,3 +22,5 @@ def apartments(request):
 def booking(request):
     """ A page to view bookings """
     return render(request, 'bookingapp/booking_page.html')
+
+

@@ -4,8 +4,13 @@ import datetime
 from django.db import models
 from django.core.validators import RegexValidator
 from cloudinary.models import CloudinaryField
+from django_google_maps import fields as map_fields
 
 # Models for Guest, Booking, Apartment
+
+class Rental(models.Model):
+    address = map_fields.AddressField(max_length=200)
+    geolocation = map_fields.GeoLocationField(max_length=100)
 
 class Guest(models.Model):
     """ Attributes of class Guest """

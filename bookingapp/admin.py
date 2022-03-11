@@ -1,6 +1,9 @@
 from django.contrib import admin
+import json
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Apartment, Guest, Booking, FrontPhoto, AddMorePhotos
+from .models import Apartment, Guest, Booking, FrontPhoto, AddMorePhotos, Rental
+from django_google_maps import widgets as map_widgets
+from django_google_maps import fields as map_fields
 
 @admin.register(Apartment)
 class ApartmentAdmin(SummernoteModelAdmin):
@@ -20,9 +23,18 @@ class BookingRequest(admin.ModelAdmin):
 @admin.register(FrontPhoto)
 class ShowFrontPhoto(SummernoteModelAdmin):
     """ For admin to see which image has been uploaded """
-    
-    media = 'front_image'    
+
+    media = 'front_image'
 
 
 admin.site.register(AddMorePhotos)
+
+admin.site.register(Rental)
+class RentalAdmin(admin.ModelAdmin):
+    """ Model for class google maps """
+    formfield_overrides = {
+        map_fields.AddressField: { 'widget': map_widgets.GoogleMapsAddressWidget(attrs={'data-map-type': 'satellite'
+      })
+    },
+}
 
