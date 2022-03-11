@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-
-
+import django_google_maps
+import django_summernote
 import dj_database_url
 if os.path.isfile("env.py"):
     import env
@@ -110,7 +110,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
     
 ]
-GOOGLE_MAPS_API_KEY = 'AIzaSyCB2euvdjQ0MmClCHx99xueO2QOFStgtKA'
+GOOGLE_MAPS_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
 
 SITE_ID = 1
 
