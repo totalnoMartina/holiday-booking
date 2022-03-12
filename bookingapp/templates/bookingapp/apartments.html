@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block content %}
-<div class="container-md">
-    <div class="row">
-        <div class="col-md-auto">
+<div class="container d-flex justify-content-md-center">
+    <div class="row my-4 p-2">
+        <div class="col-md-auto text-light font-weight-bold">
             {% for apartment in apartments %}
-            <p class="display-4 text-light">
-                With {{ apartment.beds_nr }} Beds</p>
-            <!-- <img src="{{ apartment.front_image.url }}" height="300px" width="170px" alt="front view image"> -->
-            <h3 class="display-5 text-light">"{{ apartment.apartment_name }}" apartment for a price of {{ apartment.price }} Euros</h3>
 
+            <!-- <img src="{{ apartment.front_image.url }}" height="300px" width="170px" alt="front view image"> -->
+            <h3 class="display-5">"{{ apartment.apartment_name }}" apartment for a price of {{ apartment.price }} Euros</h3>
+            <p class="display-4">
+                With {{ apartment.beds_nr }} Beds</p>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -18,7 +18,7 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active ml-4">
 
                         <img src="{{ apartment.front_image.url }}" class="d-block w-75 px-3 mx-3" height="350" alt="front view image">
 
@@ -39,7 +39,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <div class="col-md-auto text-light mt-3 font-weight-bold">{{ apartment.description }}</div>
+            <div class="col-md-auto my-3 bg-white text-dark">{{ apartment.description }}</div>
             {% endfor %}
             <p> Details about apartment features, description and directions</p>
 
