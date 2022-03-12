@@ -11,12 +11,11 @@ def home(request):
 def apartments(request):
     """ A page to view apartments """
     apartments = Apartment.objects.all()
-
     template = 'bookingapp/apartments.html'
     context = {
         'apartments': apartments,
-        
     }
+
     return render(request, template, context)
 
 def booking(request):
