@@ -5,8 +5,13 @@ from .models import Apartment
 
 def home(request):
     """ A view to return the homepage """
+    apartments = Apartment.objects.all()
+    template = 'bookingapp/index.html'
+    context = {
+        'apartments': apartments,
+    }
 
-    return render(request, 'bookingapp/index.html')
+    return render(request, template, context)
 
 def apartments(request):
     """ A page to view apartments """
