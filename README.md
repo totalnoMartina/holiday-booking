@@ -45,6 +45,7 @@ Most likely unittesting
 
 # Credits
 
+- Description content was rendering including html markdown language so a filter called '|safe' was used to render the format properly, solution was found through [Stackoverflow](www.stackoverflow.com) and led me to [Django Documentation](https://docs.djangoproject.com/en/dev/ref/templates/builtins/?from=olddocs#safe)
 ## Content
 
 - refer content - owner, booking.com
