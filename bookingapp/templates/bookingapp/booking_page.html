@@ -3,9 +3,24 @@
 
 {% block content %}
 
-<h2 class="display-4 text-success">It's Booking page</h2>
-<p> A Form to send request via email to the owner to be here</p>
+<div class="container text-light my-4 mw-75 mh-50">
+    <form>
+        <div class="form-group">
+            <label for="name">Name and Surname</label>
+            <br>
+            <input type="text" id="name" class="form-control w-25" aria-label="name" aria-describedby="name">
+            <br>
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control w-25" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" placeholder="Ask us anything..." id="exampleFormControlTextarea1" rows="3"></textarea>
+            <button type="button" class="btn btn-light mt-2">Send Enquiry</button>
+        </div>
 
+    </form>
+</div>
 
 {% endblock %}
 
