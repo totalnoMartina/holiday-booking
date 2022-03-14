@@ -15,17 +15,16 @@
             <form action="" method="POST" class="contact-form">
 
                 <div class="d-flex flex-column">
-                    <div class="p-2 bd-highlight"> Your Full Name:</div>
-                    <div class="p-2 bd-highlight">{{ form.full_name }}</div>
-
-                    <div class="p-2 bd-highlight"> Your Email Address: </div>
-                    <div class="p-2 bd-highlight"> {{ form.email }} </div>
-                    <div class="p-2 bd-highlight"> Your Request</div>
-                    <div class="p-2 container "> {{ form.contacting }}</div>
-
                     <div class="form-group">
+                        <div class="p-2"> Your Full Name:</div>
+                        <div class="p-2">{{ form.full_name }}</div>
+
+                        <div class="p-2"> Your Email Address: </div>
+                        <div class="p-2"> {{ form.email }} </div>
+                        <div class="p-2"> Your Request</div>
+                        <div class="p-2 container"> {{ form.contacting }}</div>
                         {% csrf_token %}
-                        <input type="submit" class="btn btn-light mt-2 p-2" value='Send Enquiry' />
+                        <input type="submit" class="btn btn-light w-25 ml-2 mb-3" value='Send Enquiry' />
                     </div>
                 </div>
         </div>

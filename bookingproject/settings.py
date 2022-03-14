@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_google_maps',
 
     'bookingapp',
+    
 
     # able to login in with google
     # 'allauth.socialaccount.providers.google',
@@ -115,20 +116,15 @@ GOOGLE_MAPS_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
 SITE_ID = 1
 
 DEFAULT_FROM_EMAIL = 'martina01061987@gmail.com'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'martina01061987@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_H_PASSWORD")
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_PORT_TLS = 587
+EMAIL_PORT_SSL = 465
+EMAIL_USE_TLS = True 
+EMAIL_HOST_USER = SENDGRID_API_KEY
 
-# ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-# ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-# ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
-# ACCOUNT_USERNAME_MIN_LENGTH = 4
-# LOGIN_URL = '/accounts/login/'
-# LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'bookingproject.wsgi.application'
 
@@ -194,12 +190,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
-# Cloudinary stuff
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': os.environ.get("CLOUD_NAME"),
-#     'API_KEY': os.environ.get("API_KEY"),
-#     'API_SECRET': os.environ.get("API_SECRET"),
-# }
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
