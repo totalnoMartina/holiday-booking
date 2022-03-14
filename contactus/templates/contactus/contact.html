@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<title>Book - Contact Us</title>
+{% if submitSent %}
+<div class="container">
+    <h3><strong>Thank you for Contacting Us</strong></h3>
+    <p>Your Request was sent succesfully</p>
+</div>
+{% else %}
+<div class="d-flex justify-content-center">...
+    <div class="container">
+        <div class="container-fluid text-light font-weight-bold my-4 mw-75">
+            <form action="" method="POST" class="contact-form">
+
+                <div class="d-flex flex-column">
+                    <div class="form-group">
+                        <div class="p-2"> Your Full Name:</div>
+                        <div class="p-2">{{ form.full_name }}</div>
+
+                        <div class="p-2"> Your Email Address: </div>
+                        <div class="p-2"> {{ form.email }} </div>
+                        <div class="p-2"> Your Request</div>
+                        <div class="p-2 container"> {{ form.contacting }}</div>
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-light w-25 ml-2 mb-3" value='Send Enquiry' />
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</form>
+</div>
+{% endif %}
+{% endblock %}
+
+</html>

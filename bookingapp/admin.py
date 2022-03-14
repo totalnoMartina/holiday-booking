@@ -4,8 +4,16 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Apartment, Guest, Booking, FrontPhoto, AddMorePhotos, Rental
 from django_google_maps import widgets as map_widgets
 from django_google_maps import fields as map_fields
+# from contactus.models import Contact
+
+# @admin.register(Contact)
+
+# class ContactsAdmin(SummernoteModelAdmin):
+#     list_display = ('email',)
+
 
 @admin.register(Apartment)
+
 class ApartmentAdmin(SummernoteModelAdmin):
     """ Style for admin page to have more aesthetic view """
     list_display = ('apartment_name', 'price', 'beds_nr')

@@ -3,6 +3,10 @@ from .models import Apartment
 from bookingapp.forms import BookContact
 from django.core.mail import send_mail
 from bookingproject import settings
+import sendgrid
+import os
+# using SendGrid's Python Library
+
 
 # from django.views import generic
 
@@ -37,11 +41,13 @@ def booking_contact(request):
     else:
         form = BookContact(request.POST)
         if form.is_valid():
+            sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
             cd = form.cleaned_data
-            full_name = form.cleaned_data['full_name']
-            from_email = form.cleaned_data['email']
-            new_contact = form.cleaned_data['contacting']
+            full_name = cd['full_name']
+            from_email = cd['email']
+            new_contact = cd['contacting']
             send_mail(full_name, new_contact, from_email, ['martina01061987@gmail.com',cd['email'], ])
+            response = sg.send(request_body=mail.get())
             submitSent = True
         else:
             form = BookContact()
@@ -49,22 +55,3 @@ def booking_contact(request):
                 {'form': form,
                 'submitSent' : submitSent
                 })
-
-
-    # using SendGrid's Python Library
-
-# contacting = Mail(
-#     from_email='from_email@example.com',
-#     to_emails='to@example.com',
-#     subject='Sending with Twilio SendGrid is Fun',
-#     html_content='<strong>and easy to do anywhere, even with Python</strong>')
-# try:
-#     sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-#     response = sg.send(message)
-#     print(response.status_code)
-#     print(response.body)
-#     print(response.headers)
-# except Exception as e:
-#     print(e.contacting)
-
-
