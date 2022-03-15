@@ -2,6 +2,10 @@ from django.contrib import admin
 from django.urls import path, include
 import contactus
 from contactus import views as contact_views
+from django.conf.urls.static import static
+from django.conf import settings
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,4 +13,4 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('bookingapp.urls')),
     path('contactus/', contact_views.contact_view, name='contact')
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
