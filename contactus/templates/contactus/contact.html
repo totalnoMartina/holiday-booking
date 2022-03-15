@@ -6,6 +6,7 @@
 
 <div class="d-flex justify-content-center">...
     <div class="container">
+
         <div class="container-fluid text-light font-weight-bold my-4 mw-75">
             <form action="" method="POST" class="contact-form">
 
@@ -17,7 +18,7 @@
                         <div class="p-2"> Your Email Address: </div>
                         <div class="p-2"> {{ form.email }} </div>
                         <div class="p-2"> Your Request</div>
-                        <div class="p-2 container"> {{ form.contacting }}</div>
+                        <div class="p-2 container"> {{ form.contacting}}</div>
                         {% csrf_token %}
                         <input type="submit" class="btn btn-light w-25 ml-2 mb-3" value='Send Enquiry' />
                     </div>
