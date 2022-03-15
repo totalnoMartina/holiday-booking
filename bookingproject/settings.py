@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_google_maps',
-    'storages'
+    'storages',
     
     'contactus',
     'bookingapp',
@@ -185,7 +185,8 @@ USE_TZ = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/media')
 
-if USE_AWS in os.environ:
+
+if 'USE_AWS' in os.environ:
     AWS_STORAGE_BUCKET_NAME = 'holiday-martina'
     AWS_S3_REGION_NAME = 'eu-west-3'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
