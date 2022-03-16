@@ -196,6 +196,7 @@ STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# It's a way to set up the AWS S3 bucket.
 
 # if 'USE_AWS' in os.environ:
 #     AWS_STORAGE_BUCKET_NAME = 'holiday-martina'
