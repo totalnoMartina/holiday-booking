@@ -113,6 +113,10 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
     
 ]
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+
 GOOGLE_MAPS_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
 
 SITE_ID = 1
@@ -121,6 +125,7 @@ SITE_ID = 1
 
 DEFAULT_FROM_EMAIL = 'bookingproject@example.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'martina01061987@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_GOOGLE_PASSWORD')
@@ -183,7 +188,7 @@ USE_TZ = True
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/static/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
