@@ -123,13 +123,15 @@ SITE_ID = 1
 
 # Email settings
 
-DEFAULT_FROM_EMAIL = 'bookingproject@example.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'martina01061987@gmail.com'
+# Custom setting. To email
+RECIPIENT_LIST = os.environ.get('RECIPIENT_ADDRESS')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_GOOGLE_PASSWORD')
-EMAIL_PORT_TLS = 587
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 WSGI_APPLICATION = 'bookingproject.wsgi.application'

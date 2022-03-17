@@ -13,7 +13,3 @@ class ContactForm(forms.Form):
         model = Contact
         fields = '__all__'
 
-
-def should_be_empty(value):
-    if value:
-        raise forms.ValidationError('Field is not empty')
