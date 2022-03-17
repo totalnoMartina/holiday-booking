@@ -12,5 +12,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('bookingapp.urls')),
-    path('contactus/', contact_views.contact_view, name='contact')
+    path('contactus/', contact_views.contact_view, name='contact'),
+    path('guest/', include('guestprofile.urls')),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -52,10 +52,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_google_maps',
     'storages',
-    
+
     'contactus',
     'bookingapp',
-    
+    'guestprofile',
+
 
     # able to login in with google
     # 'allauth.socialaccount.providers.google',
