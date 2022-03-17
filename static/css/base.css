@@ -18,5 +18,13 @@ h2 {
 }
 
 .text-dark {
-    color: black !importan;
+    color: black !important;
+}
+
+.btn-yellow:hover,
+.btn-yellow:active,
+.btn-yellow:focus {
+    background: rgba(47, 216, 238, 0.726);
+    color: black !important;
+    border-radius: 25%;
 }
