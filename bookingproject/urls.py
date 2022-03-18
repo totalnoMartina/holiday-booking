@@ -6,7 +6,6 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
@@ -15,4 +14,4 @@ urlpatterns = [
     path('contactus/', contact_views.contact_view, name='contact'),
     path('guest/', include('guestprofile.urls')),
 
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
