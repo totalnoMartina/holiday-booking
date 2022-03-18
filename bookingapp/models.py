@@ -1,6 +1,7 @@
 import uuid
 import datetime
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from cloudinary.models import CloudinaryField
 from django_google_maps import fields as map_fields
@@ -14,7 +15,7 @@ class Rental(models.Model):
 
 class Guest(models.Model):
     """ Attributes of class Guest """
-    guest_id = models.CharField(max_length=50, blank=False, primary_key=True)
+    guest = models.CharField(max_length=50, blank=False, primary_key=True)
     full_name = models.CharField(max_length=100, blank=False)
     ph_number = models.CharField(null=False, validators=[RegexValidator(r'^\d{3}-\d{3}-\d{4}$')], max_length=40)
     email = models.EmailField(blank=False)
@@ -33,7 +34,7 @@ APARTMENTS = (('Tony', 'Tony Apartment for max4 people'),
 
 class Apartment(models.Model):
     """ A class to create an apartment in offer """
-    guest_profile = models.ForeignKey(GuestProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='GuestProfile')
+    guest_profile = models.ForeignKey(GuestProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='GuestProf')
     apartment_name = models.CharField(choices=APARTMENTS, max_length=10, primary_key=True)
     beds_nr = models.IntegerField()
     kitchen = models.BooleanField(default=True,name='kitchen')
