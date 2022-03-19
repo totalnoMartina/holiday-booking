@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@285;300&family=Playfair+Display&display=swap');
 
 
-
 body {
     font-family: 'Lato', sans-serif;
     background: linear-gradient(to right, rgb(189, 199, 233), rgb(15, 92, 10));
-    background-image: url(../media/galesnjak.jpg);
+    background-image: url('media/galesnjak.jpg');
     /* background-repeat: no-repeat; */
     background-size: cover;
     background-position: center center;
