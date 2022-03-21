@@ -8,5 +8,4 @@ def guests_profile(request):
     context = {
         'profile': profile,
     }
-
     return render(request, template, context)
