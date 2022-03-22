@@ -8,8 +8,8 @@
             {% for apartment in apartments %}
 
             <!-- <img src="{{ apartment.front_image.url }}" height="300px" width="170px" alt="front view image"> -->
-            <h3 class="display-5">"{{ apartment.apartment_name }}" apartment for a price of {{ apartment.price }} Euros</h3>
-            <p class="display-4">
+            <h3 class="display-5 text-center font-weight-bold">"{{ apartment.apartment_name }}" apartment for a price of {{ apartment.price }} Euros</h3>
+            <p class="display-4 text-center bg-white text-dark rounded">
                 With {{ apartment.beds_nr }} Beds</p>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -39,9 +39,8 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <div class="col-md-auto my-4 bg-white text-dark font-weight-bold">{{ apartment.description|safe }}</div>
+            <div class="col bg-white text-dark font-weight-bold rounded py-2 my-3">{{ apartment.description|safe }}</div>
             {% endfor %}
-            <p> Details about apartment features, description and directions</p>
 
 
         </div>
