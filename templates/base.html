@@ -40,51 +40,53 @@
     {% endblock %}
     <title>Holiday Home</title>
 </head>
-<nav class="navbar navbar-dark sticky-top" style="background-color: #03406b; color: aqua; opacity: 70%;">
-    <a class="navbar-brand font-weight-bold" href="{% url 'home' %}" style="width: fit-content;">Welcome to Your Holiday</a>
-    <button class="navbar-toggler shadow p-2 mb-2" style="border-radius: 20%; outline: none;" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link font-weight-bold" href="{% url 'home' %}">
-                <span class="btn-yellow p-2">Holiday Home - About</span>
-            </a>
-            <a class="nav-item nav-link font-weight-bold" href="{% url 'apartments' %}"><span class="btn-yellow p-2">Apartments</span></a>
-            <a class="nav-item nav-link font-weight-bold" href="{% url 'contact' %}"><span class="btn-yellow p-2">Contact Us</span></a>
-            <ul class="list-unstyled">
-                <li class="list-inline-item dropdown">
-                    <a class="nav-item nav-link font-weight-bold" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="left">
-                            <div><i class="fas fa-user fa-lg"></i></div>
-                            <p><span class="nav-item nav-link btn-yellow p-2 font-weight-bold">My Account</span></p>
-                        </div>
-                    </a>
-
-                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">Booking Management</a>
-                        {% endif %}
-                        <a href="{% url 'guest' %}" class="dropdown-item"><span class="btn-yellow p-2">My Profile</span></a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item"><span class="btn-yellow p-2">Logout</span></a>
-                        {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item"><span class="btn-yellow p-2">Register</span></a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item"><span class="btn-yellow p-2">Login</span></a>
-                        {% endif %}
-                    </div>
-                </li>
-                <li class="list-inline-item">
-
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
 
 <body class="mb-5">
+    <nav class="navbar navbar-dark sticky-top" style="background-color: #03406b; color: aqua; opacity: 70%;">
+        <a class="navbar-brand font-weight-bold" href="{% url 'home' %}" style="width: fit-content;">Welcome to Your Holiday</a>
+        <button class="navbar-toggler shadow p-2 mb-2" style="border-radius: 20%; outline: none;" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link font-weight-bold" href="{% url 'home' %}">
+                    <span class="btn-yellow p-2">Holiday Home - About</span>
+                </a>
+                <a class="nav-item nav-link font-weight-bold" href="{% url 'apartments' %}"><span class="btn-yellow p-2">Apartments</span></a>
+                <a class="nav-item nav-link font-weight-bold" href="{% url 'contact' %}"><span class="btn-yellow p-2">Contact Us</span></a>
+                <ul class="list-unstyled">
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-item nav-link font-weight-bold" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="left">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p><span class="nav-item nav-link btn-yellow p-2 font-weight-bold">My Account</span></p>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="" class="dropdown-item">Booking Management</a>
+                            {% endif %}
+                            <a href="{% url 'guest' %}" class="dropdown-item"><span class="btn-yellow p-2">My Profile</span></a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item"><span class="btn-yellow p-2">Logout</span></a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item"><span class="btn-yellow p-2">Register</span></a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item"><span class="btn-yellow p-2">Login</span></a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="list-inline-item">
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
     <footer class="w-75 p-2 mt-4 container-fluid rounded-top fixed-bottom" style="background-color: #052f4d; opacity: 70%; color: whitesmoke;"><strong>Owners : Jasna & Zdravko Grganic, Klanfari 33, 51265 Dramalj, Crikvenica Phone Number: +385 51 xxx-xxx</strong></footer>
 
     {% block page_header %}
