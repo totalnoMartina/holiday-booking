@@ -137,6 +137,10 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_GOOGLE_PASSWORD')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+
+# ACCOUNT_EMAIL_VERIFICATION = 'none'  -- something about 500 error
+
 WSGI_APPLICATION = 'bookingproject.wsgi.application'
 
 
