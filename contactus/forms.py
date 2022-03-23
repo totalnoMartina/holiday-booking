@@ -7,6 +7,7 @@ class ContactForm(forms.Form):
     """ A form to use to send emails """
     full_name = forms.CharField(max_length=80)
     email = forms.EmailField()
+    subject = forms.CharField(max_length=40)
     contacting = forms.CharField(widget=forms.Textarea)
 
     class Meta:

@@ -4,23 +4,23 @@
 {% block content %}
 <title>Book - Contact Us</title>
 
-<div class="d-flex justify-content-center">
+<div class="d-flex">
     <div class="container">
 
-        <div class="container-fluid text-light font-weight-bold my-4 mw-75">
+        <div class="container-fluid font-weight-bold my-4 mw-75">
             <form action="" method="POST" class="contact-form">
 
-                <div class="d-flex flex-column">
-                    <div class="form-group">
-                        <div class="p-2"> Your Full Name:</div>
-                        <div class="p-2">{{ form.full_name }}</div>
+                <div class="d-flex flex-column ">
+                    <div class="form-group mx-auto text-center text-dark bg-white d-inline rounded">
+                        <div class="p-2 "> Your Full Name:</div>
+                        <div class="p-2" name="name">{{ form.full_name }}</div>
 
                         <div class="p-2"> Your Email Address: </div>
-                        <div class="p-2"> {{ form.email }} </div>
+                        <div class="p-2" name="email"> {{ form.email }} </div>
                         <div class="p-2"> Your Request</div>
-                        <div class="p-2 container"> {{ form.contacting}}</div>
+                        <div class="p-2" name="request"> {{ form.contacting}}</div>
                         {% csrf_token %}
-                        <input type="submit" class="btn btn-light w-25 ml-2 mb-3" value='Send Enquiry' />
+                        <input type="submit" class="btn btn-light w-50 ml-2 mb-3 border-dark" value='Send Enquiry' />
                     </div>
                 </div>
         </div>
