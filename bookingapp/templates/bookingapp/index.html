@@ -2,20 +2,22 @@
 {% load static %}
 
 {% block content %}
-<div container-fluid>
+<div class="container-fluid mt-5">
     <div class="row">
         <div class="col">
 
-            <h2 class="display-4 text-dark">Index - Front page with
-                preview of the location, front images of the house, feedback from guests that need to be
-                approved</h2>
 
-            <br>
-            <br>
-            <br>
+            <div class="col-lg-5 mx-auto mt-5">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Crikvenica_072.jpg" class="rounded-circle" width="200" height="200">
+                <h3 class="text-center text-white font-weight-bold">Crikvenica City</h3>
+                <p class="text-black text-center bg-light p-3">Only 5 km east of the property, there is a city of Crikvenica, a small coastal city with vibrant nightlife and abundant beachsides</p>
+                <p><a class="btn btn-info" href="https://www.tripadvisor.ie/Tourism-g303805-Crikvenica_Primorje_Gorski_Kotar_County-Vacations.html" role="button">
+                        According to TripAdvisor - About Crikvenica</a></p>
+            </div>
+
         </div>
-        <div class="col ml-3">
-            Exact location
+        <div class="col-lg-5 ml-4">
+            <h2 class="text-white text-center font-weight-bold">Exact location of Klanfari 33, Dramalj</h2>
             <div id='map' style="width: 400px; height: 400px; margin-bottom: 60px;"></div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
             <script type='text/javascript'>

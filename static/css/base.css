@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background: linear-gradient(to right, rgb(189, 199, 233), rgb(15, 92, 10));
