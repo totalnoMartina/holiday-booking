@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block content %}
-<div class="container d-flex justify-content-md-center">
+<div class="container d-flex justify-content-md-center mt-4">
     <div class="row my-4 p-2">
-        <div class="col-md-auto text-light font-weight-bold">
+        <div class="col-md-auto text-black font-weight-bold">
             {% for apartment in apartments %}
 
             <!-- <img src="{{ apartment.front_image.url }}" height="300px" width="170px" alt="front view image"> -->
-            <p class="display-4 text-center font-weight-bold">
-                {{ apartment.beds_nr }} Beds </p>
+            <p class="display-3 text-center font-weight-bold">
+                "{{ apartment.apartment_name }}" apartment</p>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -38,7 +38,8 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <h3 class="display-5 text-center bg-white text-dark rounded">"{{ apartment.apartment_name }}" apartment for a price of {{ apartment.price }} Euros</h3>
+            <h3 class="display-5 text-center bg-white text-dark rounded">An Apartment contains
+                {{ apartment.beds_nr }} beds for a price of {{ apartment.price }} Euro/per Night</h3>
 
             <div class="col bg-white text-dark font-weight-bold rounded py-2 my-3">{{ apartment.description|safe }}</div>
             {% endfor %}

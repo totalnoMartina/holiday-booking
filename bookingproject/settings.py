@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['holiday-martina.herokuapp.com', 'localhost', 'totalnomartina.github.io/holiday-booking']
+ALLOWED_HOSTS = ['holiday-martina.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     'contactus',
     'bookingapp',
+    'bookingapp.booking_func',
     'guestprofile',
 
 
@@ -97,24 +98,24 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media', #  For media files to be served in dev and pro mode
-
+                'django.template.context_processors.media',  # For media files
+                                                             # to be served in dev and pro mode
             ],
         },
     },
 ]
 
 AUTHENTICATION_BACKENDS = [
-    
+
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    
+
 ]
 
 # MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -132,9 +133,10 @@ if 'DEVELOPMENT' in os.environ:
     EMAIL_USE_TLS = True
     AWS_ACCESS_KEY_ID = 'YOUR-ACCESS-KEY-ID'
     AWS_SECRET_ACCESS_KEY = 'YOUR-SECRET-ACCESS-KEY'
-    AWS_SES_REGION_NAME = 'eu-west-1' #(ex: us-east-2)
-    AWS_SES_REGION_ENDPOINT = 'email.eu-west-1.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)
-    
+    AWS_SES_REGION_NAME = 'eu-west-1'  # (ex: us-east-2)
+    AWS_SES_REGION_ENDPOINT = 'email.eu-west-1.amazonaws.com'
+    # (ex: email.us-east-2.amazonaws.com)
+
     DEFAULT_FROM_EMAIL = 'holiday-booking@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -199,8 +201,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -208,14 +208,11 @@ USE_TZ = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
-
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

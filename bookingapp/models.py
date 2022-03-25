@@ -79,8 +79,8 @@ class Booking(models.Model):
     booking_num = models.CharField(max_length=32, null=False, editable=False, primary_key=True)
     guest_name = models.ForeignKey(Guest, on_delete=models.CASCADE)
     apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE)
-    start_date = models.DateField()
-    end_date = models.DateField()
+    check_in = models.DateField()
+    check_out = models.DateField()
     booking_created_on = models.DateTimeField(auto_now_add=True)
     booking_approved = models.BooleanField(default=False)
 
