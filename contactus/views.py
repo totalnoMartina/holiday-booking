@@ -15,7 +15,7 @@ def contact_view(request):
             subject = f'Message from {form.cleaned_data["full_name"]}'
             message = form.cleaned_data["contacting"]
             sender = form.cleaned_data["email"]
-            recipients = [settings.EMAIL_HOST_USER]
+            recipients = [settings.EMAIL_HOST_USER,]
             try:
                 send_mail(subject, message, sender, recipients, fail_silently=False)
                 messages.success(request, 'Success!')

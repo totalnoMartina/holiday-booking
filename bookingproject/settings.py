@@ -127,7 +127,14 @@ SITE_ID = 1
 # Email settings
 
 if 'DEVELOPMENT' in os.environ:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_BACKEND = 'django_ses.SESBackend'
+    EMAIL_USE_TLS = True
+    AWS_ACCESS_KEY_ID = 'YOUR-ACCESS-KEY-ID'
+    AWS_SECRET_ACCESS_KEY = 'YOUR-SECRET-ACCESS-KEY'
+    AWS_SES_REGION_NAME = 'eu-west-1' #(ex: us-east-2)
+    AWS_SES_REGION_ENDPOINT = 'email.eu-west-1.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)
+    
     DEFAULT_FROM_EMAIL = 'holiday-booking@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
