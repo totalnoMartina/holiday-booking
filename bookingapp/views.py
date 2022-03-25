@@ -27,25 +27,5 @@ def apartments(request):
 
 
 def booking_contact(request):
-    """ A page to send email to aquire bookings """
+    """ A page to aquire bookings """
     pass
-    # submitSent = False
-    # if request.method == 'GET':
-    #     form = BookContact()
-    # else:
-    #     form = BookContact(request.POST)
-    #     if form.is_valid():
-    #         sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
-    #         cd = form.cleaned_data
-    #         full_name = cd['full_name']
-    #         from_email = cd['email']
-    #         new_contact = cd['contacting']
-    #         send_mail(full_name, new_contact, from_email, ['martina01061987@gmail.com',cd['email'], ])
-    #         response = sg.send(request_body=mail.get())
-    #         submitSent = True
-    #     else:
-    #         form = BookContact()
-    # return render(request, 'bookingapp/booking_page.html',
-    #             {'form': form,
-    #             'submitSent' : submitSent
-    #             })
