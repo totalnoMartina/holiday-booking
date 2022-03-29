@@ -1,38 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %} Contact Us Here{% endblock %}
+
 {% block content %}
-<title>Book - Contact Us</title>
-{% if submitSent %}
-<div class="container">
-    <h3><strong>Thank you for Contacting Us</strong></h3>
-    <p>Your Request was sent succesfully</p>
-</div>
-{% endif %}
-<div class="d-flex">
-    <div class="container">
 
-        <div class="container-fluid font-weight-bold my-4 mw-75">
-            <form action="" method="POST" class="contact-form">
-                <div class="d-flex flex-column ">
-                    <div class="form-group mx-auto text-center text-dark bg-white d-inline rounded">
-                        <div class="p-2 "> Your Full Name:</div>
-                        <div class="p-2" name="name">{{ form.full_name }}</div>
-
-                        <div class="p-2"> Your Email Address: </div>
-                        <div class="p-2" name="email"> {{ form.email }} </div>
-                        <div class="p-2"> Your Request</div>
-                        <div class="p-2" name="request"> {{ form.contacting}}</div>
-                        {% csrf_token %}
-                        <input type="submit" class="btn btn-light w-50 ml-2 mb-3 border-dark" value='Send Enquiry' />
-                    </div>
-                </div>
+<div class="container m-4 p-2">
+    <div class="row">
+        <img src="media/images/galesnjak.jpg">
+        <div class="col mb-4">
+            <a href="mailto:martina01061987@gmail.com"> Send us an email here!</a>
         </div>
+        <div class="col"></div>
     </div>
 </div>
-</form>
-</div>
-
 {% endblock %}
 
 </html>
