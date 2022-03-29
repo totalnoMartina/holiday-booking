@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from bookingproject import settings
 from .forms import VacantApartmentsForm
 
+
 def home(request):
     """ A view to return the homepage """
     apartments = Apartment.objects.all()
@@ -14,6 +15,7 @@ def home(request):
     }
 
     return render(request, template, context)
+
 
 def apartments(request):
     """ A page to view apartments """

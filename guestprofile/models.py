@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+
 class GuestProfile(models.Model):
     """ Attributes of class Guest """
     guest = models.OneToOneField(User, on_delete=models.CASCADE)

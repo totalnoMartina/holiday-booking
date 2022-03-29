@@ -11,4 +11,4 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('bookingapp.urls')),
     path('guest/', include('guestprofile.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
