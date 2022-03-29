@@ -53,7 +53,6 @@
                         <span class="btn-yellow p-2">Holiday Home - About</span>
                     </a>
                     <a class="nav-item nav-link font-weight-bold" href="{% url 'apartments' %}"><span class="btn-yellow p-2">Apartments</span></a>
-                    <a class="nav-item nav-link font-weight-bold" href="{% url 'contact' %}"><span class="btn-yellow p-2">Contact Us</span></a>
                     <ul class="list-unstyled">
                         <li class="list-inline-item dropdown">
                             <a class="nav-item nav-link font-weight-bold" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -85,7 +84,9 @@
     </div>
 </body>
 
-<footer class="w-75 p-2 mt-4 container-fluid rounded-top fixed-bottom" style="background-color: #052f4d; opacity: 70%; color: whitesmoke;"><strong>Owners : Jasna & Zdravko Grganic, Klanfari 33, 51265 Dramalj, Crikvenica Phone Number: +385 51 xxx-xxx</strong></footer>
+<footer class="w-100 p-2 mt-4 text-center rounded-top fixed-bottom" style="background-color: #052f4d; opacity: 70%; color: whitesmoke;"><strong>Owners : Jasna & Zdravko Grganic, Klanfari 33, 51265 Dramalj, Crikvenica Phone Number: +385 51 xxx-xxx</strong>
+    <a href="mailto:martina01061987@gmail.com" class="text-white"> Send us an email here!</a>
+</footer>
 
 {% block page_header %}
 {% endblock %}
@@ -100,8 +101,19 @@
 {% endblock %}
 
 {% block postloadjs %}
-<!-- Script for the 'active' class for the navigation links -- to be found or thought of -->
+<script>
+    /// When you click everywhere in the document
+    $(document).click(function(event) {
 
+        /// If *navbar-collapse* is not among targets of event
+        if (!$(event.target).is('.navbar-collapse *')) {
+
+            /// Collapse every *navbar-collapse*
+            $('.navbar-collapse').collapse('hide');
+
+        }
+    });
+</script>
 {% endblock %}
 
 

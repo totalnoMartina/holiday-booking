@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'django_google_maps',
     'storages',
 
-    'contactus',
     'bookingapp',
     'bookingapp.booking_func',
     'guestprofile',
