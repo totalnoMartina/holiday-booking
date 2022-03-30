@@ -46,6 +46,11 @@ class Apartment(models.Model):
     front_image = CloudinaryField('front_image', default='first_img')  # cloudinary needs to store this
     front_image2 = CloudinaryField('front_image2', default='second_img')  # cloudinary needs to store this
     front_image3 = CloudinaryField('front_image3', default='third_img')  # cloudinary needs to store this
+    front_image4 = CloudinaryField('front_image4', default='third_img')  # cloudinary needs to store this
+    front_image5 = CloudinaryField('front_image5', default='third_img')  # cloudinary needs to store this
+    front_image6 = CloudinaryField('front_image6', default='third_img')  # cloudinary needs to store this
+    front_image7 = CloudinaryField('front_image7', default='third_img')  # cloudinary needs to store this
+    front_image8 = CloudinaryField('front_image8', default='third_img')  # cloudinary needs to store this
     price = models.DecimalField(max_digits=8, decimal_places=2, blank=False)
     description = models.TextField(name='description', null=True)
 
