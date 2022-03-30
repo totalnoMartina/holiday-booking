@@ -14,8 +14,21 @@
                         According to TripAdvisor - About Crikvenica</a></p>
             </div>
         </div>
-        <div class="col-lg-5 ml-4">
+        <div class="col-lg-5 ml-4 mb-2">
+            <a class="weatherwidget-io mt-5 mr-2" href="https://forecast7.com/en/45d1714d69/crikvenica/" data-label_1="CRIKVENICA" data-label_2="WEATHER" data-theme="weather_one">CRIKVENICA WEATHER</a>
+            <script>
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = 'https://weatherwidget.io/js/widget.min.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, 'script', 'weatherwidget-io-js');
+            </script>
             <h2 class="text-white text-center font-weight-bold">Exact location of Klanfari 33, Dramalj</h2>
+
             <div id='map' style="width: 400px; height: 400px; margin-bottom: 60px;"></div>
             {% block extra_js %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -31,6 +44,7 @@
                 }
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB2euvdjQ0MmClCHx99xueO2QOFStgtKA&callback=initMap" async defer></script>
+
             {% endblock %}
 
         </div>
