@@ -5,11 +5,15 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background: linear-gradient(to right, rgb(189, 199, 233), rgb(15, 92, 10));
     background-image: url('https://st3.depositphotos.com/25823418/35841/i/600/depositphotos_358411626-stock-photo-croatia-beautiful-coastline-adriatic-sea.jpg');
     /* background-repeat: no-repeat; */
     background-size: cover;
     background-position: center center;
+}
+
+nav,
+footer {
+    background-color: rgba(72, 11, 107, 0.8) !important;
 }
 
 h2 {
@@ -86,4 +90,12 @@ h2 {
 .allauth-form-inner-content a {
     color: #17a2b8;
     /* text-info */
+}
+
+
+/* Media Queries  */
+@media (max-width: 460px) {
+    footer {
+        font-size: smaller;
+    }
 }

@@ -3,12 +3,12 @@
 
 {% block content %}
 <div class="container d-flex justify-content-md-center mt-4">
-    <div class="row my-4 p-2">
+    <div class="row my-2 p-2">
         <div class="col-md-auto text-black font-weight-bold">
             {% for apartment in apartments %}
 
             <!-- <img src="{{ apartment.front_image.url }}" height="300px" width="170px" alt="front view image"> -->
-            <p class="display-3 text-center font-weight-bold">
+            <p class="display-3 text-center font-weight-bold mt-3">
                 "{{ apartment.apartment_name }}" apartment</p>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -41,7 +41,7 @@
             <h3 class="display-5 text-center bg-white text-dark rounded">An Apartment contains
                 {{ apartment.beds_nr }} beds for a price of {{ apartment.price }} Euro/per Night</h3>
 
-            <div class="col bg-white text-dark font-weight-bold rounded py-2 my-3">{{ apartment.description|safe }}</div>
+            <div class="col bg-white text-dark font-weight-bold rounded py-1 mb-5">{{ apartment.description|safe }}</div>
             {% endfor %}
 
 
@@ -50,5 +50,3 @@
 </div>
 
 {% endblock %}
-
-</html>
