@@ -20,28 +20,28 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active ml-4">
+                    <div class="carousel-item active mx-auto my-4">
                         <img src="{{ apartment.front_image.url }}" class="d-block w-75 px-3 mx-auto" height="400" alt="front view image">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item mx-auto my-4">
                         <img src="{{ apartment.front_image2.url }}" class="d-block w-75 px-3 mx-auto" height="400px" alt="front view image">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item mx-auto my-4">
                         <img src="{{ apartment.front_image3.url }}" class="d-block w-75 px-3 mx-auto" height="400px" alt="balcony image">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item mx-auto my-4">
                         <img src="{{ apartment.front_image4.url }}" class="d-block w-75 px-3 mx-auto" height="400px" alt="front view image">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item mx-auto my-4">
                         <img src="{{ apartment.front_image5.url }}" class="d-block w-75 px-3 mx-auto" height="400px" alt="front view image">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item mx-auto my-4">
                         <img src="{{ apartment.front_image6.url }}" class="d-block w-75 px-3 mx-auto" height="400px" alt="front view image">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item mx-auto my-4">
                         <img src="{{ apartment.front_image7.url }}" class="d-block w-75 px-3 mx-auto" height="400px" alt="front view image">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item mx-auto my-4">
                         <img src="{{ apartment.front_image8.url }}" class="d-block w-75 px-3 mx-auto" height="400px" alt="front view image">
                     </div>
                 </div>
@@ -55,9 +55,6 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <h3 class="display-5 text-center backg text-white rounded mt-4">An Apartment contains
-                {{ apartment.beds_nr }} beds for a price of {{ apartment.price }} Euro/per Night</h3>
-
             <div class="col backg text-white font-weight-bold rounded py-1 mb-5">{{ apartment.description|safe }}</div>
             {% endfor %}
         </div>
