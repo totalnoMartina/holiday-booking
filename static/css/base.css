@@ -7,7 +7,8 @@ body {
 }
 
 .backg {
-    background: rgba(24, 224, 174, 0.7) !important;
+    background: rgba(5, 68, 110, 0.7) !important;
+    color: white !important;
 }
 
 nav,
@@ -31,6 +32,7 @@ h2 {
 
 
 .btn-yellow:hover,
+.navbar-toggler:hover,
 a:hover {
     background: rgba(228, 235, 236, 0.7) !important;
     color: black !important;
