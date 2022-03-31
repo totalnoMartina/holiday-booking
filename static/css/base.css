@@ -7,13 +7,18 @@ body {
 }
 
 .backg {
-    background: rgba(103, 227, 243, 0.7) !important;
+    background: rgba(24, 224, 174, 0.7) !important;
 }
 
 nav,
-footer {
-    background-color: rgba(72, 11, 107, 0.8) !important;
+footer,
+.dropdown-menu,
+.navbar-light {
+    color: antiquewhite;
+    font-weight: bold;
+    background: rgba(5, 68, 110, 0.7) !important;
 }
+
 
 h2 {
     margin: 20px;
@@ -24,13 +29,14 @@ h2 {
     color: black !important;
 }
 
+
 .btn-yellow:hover,
-.btn-yellow:active,
-.btn-yellow:focus {
-    background: rgba(47, 216, 238, 0.726);
+a:hover {
+    background: rgba(228, 235, 236, 0.7) !important;
     color: black !important;
-    border-radius: 25%;
 }
+
+
 
 /* Allauth formatting */
 
