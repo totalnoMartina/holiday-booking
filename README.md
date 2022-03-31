@@ -4,6 +4,8 @@ This webpage is made for a privately owned house that rents out apartments to gu
 
 -- images of the website here
 
+![HomePage](media/images/homepage-main.png?raw=true)
+
 # Flowchart
 
 # Features
