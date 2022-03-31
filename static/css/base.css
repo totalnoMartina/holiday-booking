@@ -1,7 +1,6 @@
 body {
     font-family: 'Lato', sans-serif;
-    background-image: url('https://st3.depositphotos.com/25823418/35841/i/600/depositphotos_358411626-stock-photo-croatia-beautiful-coastline-adriatic-sea.jpg');
-    /* background-repeat: no-repeat; */
+    background-image: url('/media/images/galesnjak.jpg');
     background-size: cover;
     background-position: center center;
 }
@@ -102,6 +101,7 @@ a:hover {
 
 /* Media Queries  */
 @media (max-width: 560px) {
+
     footer {
         font-size: smaller;
     }
