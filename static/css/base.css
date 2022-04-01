@@ -39,6 +39,7 @@ h2 {
 a:hover {
     background: rgba(228, 235, 236, 0.7) !important;
     color: black !important;
+    border-radius: 80%;
 }
 
 
