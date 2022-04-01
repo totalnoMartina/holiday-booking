@@ -8,13 +8,9 @@ from .forms import VacantApartmentsForm
 
 def home(request):
     """ A view to return the homepage """
-    apartments = Apartment.objects.all()
     template = 'bookingapp/index.html'
-    context = {
-        'apartments': apartments,
-    }
-
-    return render(request, template, context)
+    
+    return render(request, template)
 
 
 def apartments(request):
