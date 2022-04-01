@@ -1,13 +1,14 @@
 import uuid
 import datetime
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, UserManager
 from django.core.validators import RegexValidator
 from cloudinary.models import CloudinaryField
 from django_google_maps import fields as map_fields
 from guestprofile.models import GuestProfile
 
 # Models for Guest, Booking, Apartment
+
 
 
 class Rental(models.Model):
@@ -58,6 +59,15 @@ class Apartment(models.Model):
         """ Showing apartment class model created """
         return f'An apartment named {self.apartment_name} with {self.beds_nr} beds and the price of {self.price} euros is created'
 
+
+DURATION_ZERO = datetime.time(hour=0)
+DEFAULT_DURATION = datetime.time(hour=1)
+DEFAULT_TIME = datetime.time(hour=12)
+
+
+phoneValidator = RegexValidator(
+    regex=r'[0-9][0-9 ]+',
+    message='Not a valid phone number')
 
 class Booking(models.Model):
     """ A class to contain booking attributes and methods """

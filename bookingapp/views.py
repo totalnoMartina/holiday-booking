@@ -8,9 +8,9 @@ from .forms import VacantApartmentsForm
 
 def home(request):
     """ A view to return the homepage """
-    template = 'bookingapp/index.html'
-    
-    return render(request, template)
+    template_home = 'bookingapp/index.html'
+
+    return render(request, template_home)
 
 
 def apartments(request):
@@ -24,10 +24,8 @@ def apartments(request):
     return render(request, template, context)
 
 
-class BookingView(FormView):
-    form_class = VacantApartmentsForm
-    template_name = 'apartments_vacant.html'
+def booking(request):
 
-    def form_valid(self, form):
-        data = form.cleaned_data
-        apartments_list = Apartment.objects.filter()
+    template_book = 'bookingapp/booking_page.html'
+
+    return render(request, template_book)
