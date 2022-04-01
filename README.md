@@ -4,15 +4,25 @@ This webpage is made for a privately owned house that rents out apartments to gu
 
 -- images of the website here
 
-![HomePage](media/images/homepage-main.png?raw=true)
+![HomePage](media/images/Holiday-home.png?raw=true)
 
 # Flowchart
+
+## Home Page
+![Home Page](media/images/holidayhome.png?raw=true)
+
+## Apartments Page
+
+![Apartments Page](media/images/holidayhome-apartments.png?raw=true)
+
 
 # Features
 
 ## Existing features
 
 A Navbar with contact number, names of the owners, an email address to contact the owners directly, Apartments images and description, a pricelist, a Calendar with available dates and prices per night, map with exact location and a weather widget for current weather informations
+
+A calendar bootstrap template that I rearranged a little is found on this [link](https://colorlib.com/wp/bootstrap-calendars/)
 ### The landing page image, contact number and nav
 
 ### The Apartments in offer with description, more images for the specific apartment
