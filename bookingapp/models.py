@@ -59,28 +59,6 @@ class Apartment(models.Model):
         return f'An apartment named {self.apartment_name} with {self.beds_nr} beds and the price of {self.price} euros is created'
 
 
-class FrontPhoto(models.Model):
-    """ A class for the front image """
-    front_img = CloudinaryField('front_image')
-    related_to_apartment = models.ForeignKey(Apartment,
-                            on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'Image uploaded to apartment {self.related_to_apartment}'
-
-
-class AddMorePhotos(models.Model):
-    """ A class to add more photos """
-    add_images = CloudinaryField('more_images')
-    related_to_apartment = models.ForeignKey(Apartment,
-                            on_delete=models.CASCADE)
-    related_to_front_img = models.ForeignKey(FrontPhoto,
-                            on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f' Uploaded succesfully, for {self.related_to_apartment} apartment'
-
-
 class Booking(models.Model):
     """ A class to contain booking attributes and methods """
     booking_num = models.CharField(max_length=32, null=False, editable=False, primary_key=True)

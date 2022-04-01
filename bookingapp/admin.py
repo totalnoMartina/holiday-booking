@@ -1,16 +1,9 @@
 from django.contrib import admin
 import json
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Apartment, Guest, Booking, FrontPhoto, AddMorePhotos, Rental
+from .models import Apartment, Guest, Booking, Rental
 from django_google_maps import widgets as map_widgets
 from django_google_maps import fields as map_fields
-# from contactus.models import Contact
-
-# @admin.register(Contact)
-
-# class ContactsAdmin(SummernoteModelAdmin):
-#     list_display = ('email',)
-
 
 @admin.register(Apartment)
 
@@ -28,14 +21,11 @@ class BookingRequest(admin.ModelAdmin):
     list_display = ('booking_num', 'apartment', 'guest_name')
 
 
-@admin.register(FrontPhoto)
 class ShowFrontPhoto(SummernoteModelAdmin):
     """ For admin to see which image has been uploaded """
 
     media = 'front_image'
 
-
-admin.site.register(AddMorePhotos)
 
 admin.site.register(Rental)
 class RentalAdmin(admin.ModelAdmin):
@@ -45,4 +35,3 @@ class RentalAdmin(admin.ModelAdmin):
       })
     },
 }
-
