@@ -1,10 +1,10 @@
 html {
     scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background: rgb(173, 171, 210);
     background: linear-gradient(90deg, rgb(23, 114, 159) 4%, rgb(3, 3, 99) 51%, rgba(9, 176, 210, 1) 100%);
     font-family: 'Lato', sans-serif;
