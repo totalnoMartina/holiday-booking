@@ -1,8 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    background: rgb(173, 171, 210);
+    background: linear-gradient(90deg, rgb(23, 114, 159) 4%, rgb(3, 3, 99) 51%, rgba(9, 176, 210, 1) 100%);
     font-family: 'Lato', sans-serif;
-    background-image: url('https://st3.depositphotos.com/25823418/35841/i/600/depositphotos_358411626-stock-photo-croatia-beautiful-coastline-adriatic-sea.jpg');
-    background-size: cover;
-    background-position: center center;
+
 }
 
 .backg {
@@ -100,7 +104,7 @@ a:hover {
 
 
 /* Media Queries  */
-@media (max-width: 560px) {
+@media (max-width: 580px) {
 
     footer {
         font-size: smaller;
