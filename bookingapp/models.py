@@ -60,6 +60,8 @@ class Apartment(models.Model):
         return f'An apartment named {self.apartment_name} with {self.beds_nr} beds and the price of {self.price} euros is created'
 
 
+# Helper constant variables for indicating time
+
 DURATION_ZERO = datetime.time(hour=0)
 DEFAULT_DURATION = datetime.time(hour=1)
 DEFAULT_TIME = datetime.time(hour=12)
@@ -95,16 +97,14 @@ class Booking(models.Model):
         return f'{self.apartment} is booked for {self.guest_name}, with the ID of {self.booking_num}'
 
 
-def get_total_days(Booking):
-    """ A function to get total number of days booked """
-    start = Booking.start_date.datetime.strftime("%m/%d/%Y")
-    end = Booking.end_date.datetime.strftime("%m/%d/%Y")
-    total_days = end - start
-    return total_days
+class Feedback(models.Model):
+    """ Guests who are logged in and have visited
+    can give feedback about their stay """
+    text = models.TextField()
+    date_posted = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return 'Feedback #{}'.format(self.id)
 
-def get_total_price(Booking):
-    """ A method used to get total price """
-    total_price = Booking.total_days * Apartment.price
-
-    return f'{Booking.apartment} is booked for {Booking.guest_name}, with the ID of {Booking.booking_num} for the total of {total_price} for {Booking.total_days} days'
+    class Meta:
+        verbose_name_plural = 'feedback'

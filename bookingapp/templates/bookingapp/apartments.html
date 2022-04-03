@@ -61,4 +61,16 @@
     </div>
 </div>
 
+{% for feedback in feedbacks %}
+<article class="media">
+    <div class="media-content">
+        <div class="content text-white">
+            <p>
+                <strong>{{ feedback.date_posted }}</strong>
+                <br> {{ feedback.text }}
+            </p>
+        </div>
+    </div>
+</article>
+{% endfor %}
 {% endblock %}
