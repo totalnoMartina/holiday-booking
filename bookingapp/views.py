@@ -16,9 +16,12 @@ def home(request):
 def apartments(request):
     """ A page to view apartments """
     apartments = Apartment.objects.all()
+    feedbacks = Feedback.objects.order_by('-date_posted')
+
     template = 'bookingapp/apartments.html'
     context = {
         'apartments': apartments,
+        'feedbacks': feedbacks,
     }
     return render(request, template, context)
 
@@ -46,8 +49,9 @@ def get_total_price(Booking):
 def feedbacks(request):
     """ A posting of feedback for guests """
     feedbacks = Feedback.objects.order_by('-date_posted')
-    context = {
+    context = {        
         'feedbacks': feedbacks
+
     }
     return render(request, 'bookingapp/feedback.html', context)
 

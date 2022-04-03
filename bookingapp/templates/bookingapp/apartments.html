@@ -60,17 +60,31 @@
         </div>
     </div>
 </div>
+<div class="container col-md-6 mb-4">
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <a href="{% url 'add_feedback' %}" class="btn btn-primary text-white my-3">Add new Feedback</a>
+            </div>
+        </div>
+    </article>
+    {% if user.is_authenticated %}
+    {% for feedback in feedbacks %}
 
-{% for feedback in feedbacks %}
-<article class="media">
-    <div class="media-content">
-        <div class="content text-white">
-            <p>
-                <strong>{{ feedback.date_posted }}</strong>
-                <br> {{ feedback.text }}
-            </p>
+    <div class="main-content mb-4 p-1 mx-2">
+        <div class="col">
+            <strong class="text-white">{{ feedback.date_posted }}</strong>
+            <br>
+            <div class="bg-white rounded p-2">
+                {{ feedback.text }}
+            </div>
+            <br>
+            <div class="text-white">
+                Posted by {{ user.name }}
+            </div>
         </div>
     </div>
-</article>
-{% endfor %}
+    {% endfor %}
+    {% endif %}
+</div>
 {% endblock %}
