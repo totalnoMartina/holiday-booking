@@ -2,57 +2,41 @@
 {% load static %}
 
 {% block content %}
-<section class="hero is-primary">
-    <div class="hero-body">
-        <div class="container">
+
+<div class="container mt-3">
+    <br>
+    <br>
+    <br>
+    <h1 class="title text-white font-weight-bold text-center">
+        Guests Reviews - Feedback
+    </h1>
+</div>
+<div class="container col-md-6 mb-4">
+
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <a href="{% url 'add_feedback' %}" class="btn btn-primary text-white my-3">Add new Feedback</a>
+            </div>
+        </div>
+    </article>
+    {% if user.is_authenticated %}
+    {% for feedback in feedbacks %}
+
+    <div class="main-content mb-4 p-1 mx-2">
+        <div class="content">
+            <strong class="text-white">{{ feedback.date_posted }}</strong>
             <br>
+            <div class="bg-white rounded p-2">
+                {{ feedback.text }}
+            </div>
             <br>
-            <br>
-            <br>
-            <br>
-            <h1 class="title text-white font-weight-bold">
-                Guests Reviews - Feedback
-            </h1>
+            <div class="text-white">
+                Posted by {{ user.name }}
+            </div>
         </div>
     </div>
-</section>
-
-<section class="section">
-    <div class="container">
-
-        <article class="media">
-            <div class="media-content">
-                <div class="content">
-                    <a href="{% url 'add_feedback' %}" class="btn btn-primary text-white my-3">Add new Feedback</a>
-                </div>
-            </div>
-        </article>
-        {% if user.is_authenticated %}
-
-        {% for feedback in feedbacks %}
-        <article class="media">
-            <div class="media-content">
-                <div class="content">
-                    <p>
-                        <strong class="text-white">{{ feedback.date_posted }}</strong>
-                        <br>
-                        <article class="bg-white rounded p-1">
-                            {{ feedback.text }}
-                        </article>
-                        <br>
-                        <div>
-                            Posted by {{ user.name }}
-                        </div>
-
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        {% endfor %}
-        {% endif %}
-
-    </div>
-
-</section>
+    {% endfor %}
+    {% endif %}
+</div>
 {% endblock %}

@@ -183,6 +183,8 @@ a:hover,
 }
 
 
+
+
 /* Allauth formatting */
 
 .allauth-form-inner-content p {
@@ -268,5 +270,17 @@ a:hover,
 
     .section {
         text-align: center;
+    }
+
+    /* Feedback CSS */
+
+    .main-content {
+        margin-bottom: 30px;
+
+    }
+
+    .title {
+        font-size: 21px;
+        text-transform: uppercase;
     }
 }
