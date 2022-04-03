@@ -92,7 +92,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',  # For media files
-                                                             # to be served in dev and pro mode
+                                                             # in dev and pro
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
             ],
@@ -142,7 +142,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get("SOCIAL_AUTH_FACEBOOK_SECRET")
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = "home"
-#if you succeed in login, you'll be redirected to the main page.
+# if you succeed in login, you'll be redirected to the main page.
 
 
 # MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

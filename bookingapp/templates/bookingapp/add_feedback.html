@@ -7,9 +7,9 @@
 <br>
 <br>
 <section class="section mt-5">
-    <div class="container">
-
-        <form method="POST" action="{% url 'add_feedback' %}">
+    <div class="container text-white">
+        <span class="bg-primary p-2 mb-2 rounded">New Feedback</span>
+        <form method="POST" action="{% url 'add_feedback' %}" class="mt-2">
             {% csrf_token %}
             <div class="field">
                 <div class="control">
@@ -19,7 +19,7 @@
 
             <div class="field is-grouped is-grouped-right">
                 <div class="control">
-                    <button class="button is-link rounded">Submit</button>
+                    <button class="button is-link rounded btn bg-primary text-white">Submit</button>
                 </div>
             </div>
         </form>
@@ -38,15 +38,18 @@
 
 
 {% for feedback in feedbacks %}
-<article class="media">
-    <div class="media-content">
-        <div class="content">
-            <p>
-                <strong class="text-white">{{ feedback.date_posted }}</strong>
-                <br> {{ feedback.text }}
-            </p>
+<div class="main-content mb-4 p-1 mx-auto">
+    <div class="col-md-6">
+        <strong class="text-white">{{ feedback.date_posted }}</strong>
+        <br>
+        <div class="bg-white rounded p-2">
+            {{ feedback.text }}
+        </div>
+        <br>
+        <div class="text-white">
+            Posted by {{ user.name }}
         </div>
     </div>
-</article>
+</div>
 {% endfor %}
 {% endblock %}
