@@ -141,7 +141,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get("SOCIAL_AUTH_FACEBOOK_SECRET")
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = "/" 
+LOGIN_REDIRECT_URL = "home"
 #if you succeed in login, you'll be redirected to the main page.
 
 

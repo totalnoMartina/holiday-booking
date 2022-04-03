@@ -64,10 +64,11 @@ DURATION_ZERO = datetime.time(hour=0)
 DEFAULT_DURATION = datetime.time(hour=1)
 DEFAULT_TIME = datetime.time(hour=12)
 
-
+# A code and a validator that helps present field like a numeric pad
 phoneValidator = RegexValidator(
     regex=r'[0-9][0-9 ]+',
     message='Not a valid phone number')
+
 
 class Booking(models.Model):
     """ A class to contain booking attributes and methods """
