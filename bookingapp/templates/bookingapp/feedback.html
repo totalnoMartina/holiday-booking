@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 class="title text-white font-weight-bold">
+                Guests Reviews - Feedback
+            </h1>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <article class="media">
+            <div class="media-content">
+                <div class="content">
+                    <a href="{% url 'add_feedback' %}" class="btn btn-primary text-white my-3">Add new Feedback</a>
+                </div>
+            </div>
+        </article>
+        {% if user.is_authenticated %}
+
+        {% for feedback in feedbacks %}
+        <article class="media">
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong class="text-white">{{ feedback.date_posted }}</strong>
+                        <br>
+                        <article class="bg-white rounded p-1">
+                            {{ feedback.text }}
+                        </article>
+                        <br>
+                        <div>
+                            Posted by {{ user.name }}
+                        </div>
+
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        {% endfor %}
+        {% endif %}
+
+    </div>
+
+</section>
+{% endblock %}

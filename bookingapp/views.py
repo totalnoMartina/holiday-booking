@@ -49,7 +49,7 @@ def feedbacks(request):
     context = {
         'feedbacks': feedbacks
     }
-    return render(request, 'bookingapp/add_feedback.html', context)
+    return render(request, 'bookingapp/feedback.html', context)
 
 
 def add_feedback(request):
