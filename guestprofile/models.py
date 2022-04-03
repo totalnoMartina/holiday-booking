@@ -17,7 +17,7 @@ class GuestProfile(models.Model):
 
     def __str__(self):
         """ A method to show stored data of Guest """
-        return f'A guest with an id of {self.guest_id},  {self.full_name} with a phone number: {self.ph_number} has been created! Welcome {self.guest}'
+        return f'A profile for {self.guest} has been created! Welcome!'
 
 
 @receiver(post_save, sender=User)

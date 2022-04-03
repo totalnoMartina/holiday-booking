@@ -15,15 +15,24 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container">
+<div class="container mt-5">
+    <div class="text-white display-4">{{ profile }}
+        <div>
+            {% if request.user.is_superuser %}
+            Status : Administrator
+            {% else %}
+            Status : Guest
+            {% endif %}
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4"><span class="btn-yellow p-2">My Profile</span></h2>
             <hr>
+
         </div>
 
     </div>
-    <div class="text-white display-4">{{ profile }}</div>
-
-    {% endblock %}
+</div>
+{% endblock %}
