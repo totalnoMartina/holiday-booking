@@ -66,7 +66,7 @@
                     <div class="dropdown-menu text-white text-center" aria-labelledby="navbarDropdownMenuLink">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a class="dropdown-item text-white" href="#">Management</a>
+                        <a class="dropdown-item text-white" href="{% url 'admin:index' %}">Management</a>
                         {% endif %}
                         <a class="dropdown-item text-white" href="{% url 'guest' %}">My Profile</a>
                         <a class="dropdown-item text-white" href="{% url 'feedback' %}">Feedback</a>
