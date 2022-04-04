@@ -3,7 +3,7 @@ from .models import APARTMENTS
 from django.forms import ModelForm
 from .models import Feedback
 
-
+# 2 forms = booking(vacantapartmentsform) and guest form
 
 class VacantApartmentsForm(forms.Form):
     chosen_apartment = forms.ChoiceField(choices=APARTMENTS, required=True)

@@ -6,7 +6,7 @@
     <div class="row mx-auto">
 
         {% if messages %}
-        <div class="text-white mx-auto bg-primary rounded p-2">
+        <div class="text-white mx-auto bg-primary rounded p-2" id="message-container">
             <strong>Feedback:</strong>
             <ul>
                 {% for message in messages %}
@@ -150,4 +150,12 @@
     </table>
 </div>
 
+{% block postloadjs %}
+<!-- for the messages to timeout -->
+var message_ele = document.getElementById("message_container");
+
+setTimeout(function() {
+message_ele.style.display = "none";
+}, 3000);
+{% endblock %}
 {% endblock %}

@@ -29,6 +29,10 @@ def apartments(request):
 def booking(request):
     """ Function to handle bookings """
     template_book = 'bookingapp/booking_page.html'
+    # if req == post
+    # use both forms - guest and booking
+    # if both forms valid save.forms - both
+    # form action in jinja name reference of url
     return render(request, template_book)
 
 
