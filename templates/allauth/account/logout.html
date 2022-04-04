@@ -9,7 +9,7 @@
 <br>
 <br>
 <hr>
-<h2 class="logo-font my-5">{% trans "Log Out" %}</h2>
+<h2 class="logo-font mt-5">{% trans "Log Out" %}</h2>
 <hr>
 <p>{% trans 'Are you sure you want to log out?' %}</p>
 
@@ -18,6 +18,6 @@
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Cancel</a>
+    <a class="btn btn-primary rounded" href="{% url 'home' %}">Cancel</a>
     <button type="submit">{% trans 'Sign Out' %}</button>
 </form>

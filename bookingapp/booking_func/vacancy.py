@@ -4,6 +4,7 @@ from bookingapp.models import Apartment, Booking
 
 def check_if_vacant(apartment, check_in, check_out):
     vacant_list = []
+    apartment = Apartment.objects.get()
     booked_list = Booking.objects.filter(apartment=apartment)
     for booking in booked_list:
         if booking.check_in > check_out or booking.check_out < check_in:

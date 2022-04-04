@@ -24,7 +24,13 @@ class GuestView(admin.ModelAdmin):
 class BookingRequest(admin.ModelAdmin):
     """ Add view for the admin to see booking requests """
 
-    list_display = ('booking_num', 'apartment', 'guest_name')
+    list_display = ('booking_num',
+                    'apartment',
+                    'guest_name',
+                    'check_in',
+                    'check_out',
+                    'booking_created_on',
+                    'booking_approved')
 
 
 class ShowFrontPhoto(SummernoteModelAdmin):
@@ -47,3 +53,4 @@ class RentalAdmin(admin.ModelAdmin):
 class FeedbackView(SummernoteModelAdmin):
     """ A dislay to see the feedback text and guest who wrote it """
     list_display = ('text', )
+

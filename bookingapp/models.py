@@ -7,8 +7,8 @@ from cloudinary.models import CloudinaryField
 from django_google_maps import fields as map_fields
 from guestprofile.models import GuestProfile
 
-# Models for Guest, Booking, Apartment
 
+# Models for Guest, Booking, Apartment
 
 
 class Rental(models.Model):
@@ -20,14 +20,14 @@ class Guest(models.Model):
     """ Attributes of class Guest """
     guest = models.CharField(max_length=50, blank=False, primary_key=True)
     full_name = models.CharField(max_length=100, blank=False)
-    ph_number = models.CharField(null=False, validators=[RegexValidator(r'^\d{3}-\d{3}-\d{4}$')], max_length=40)
+    ph_number = models.CharField(null=False, max_length=40)
     email = models.EmailField(blank=False)
     kids = models.BooleanField(default=False, blank=True)
     pets = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         """ A method to show stored data of Guest """
-        return f'A guest with an id of {self.guest_id},  {self.full_name} with a phone number: {self.ph_number} has been created!'
+        return f'A guest {self.full_name} with a phone number: {self.ph_number} has been created!'
 
 
 APARTMENTS = (('Tony', 'Tony Apartment for max4 people'),
@@ -92,6 +92,10 @@ class Booking(models.Model):
         """ Used to save the booking number as random chosen number """
         self.booking_num = self._generate_booking_num()
         super().save(*args, **kwargs)
+
+    def add_booking(self):
+        """ A function to add bookings with times booked and app name """
+        pass
 
     def __str__(self):
         return f'{self.apartment} is booked for {self.guest_name}, with the ID of {self.booking_num}'

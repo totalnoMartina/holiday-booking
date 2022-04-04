@@ -29,7 +29,17 @@
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4"><span class="btn-yellow p-2">My Profile</span></h2>
-            <hr>
+        </div>
+
+        <div class="col text-white">
+            {% if request.user.is_superuser %}
+            Your name : {{ user.username }}
+            {% else %}
+            {{ profile.full_name }}
+            <br>
+            Your email address: {{ profile.email }}
+            Your phone number: {{ profile.ph_number }}
+            {% endif %}
         </div>
 
     </div>
