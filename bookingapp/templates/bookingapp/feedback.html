@@ -19,7 +19,7 @@
             </div>
         </div>
     </article>
-    {% if user.is_authenticated %}
+
     {% for feedback in feedbacks %}
 
     <div class="main-content mb-4 p-1 mx-2">
@@ -31,13 +31,14 @@
             </div>
             <br>
             <div class="text-white">
-                Posted by {{ user.name }}
+                {% if user.is_authenticated %}
+                Posted by {{ full_name }}
             </div>
+            {% endif %}
 
         </div>
     </div>
     {% endfor %}
-    {% endif %}
 </div>
 
 {% endblock %}
