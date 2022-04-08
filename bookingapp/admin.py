@@ -21,25 +21,19 @@ class GuestView(admin.ModelAdmin):
 
 
 @admin.register(Booking)
-class BookingRequest(admin.ModelAdmin):
-    """ Add view for the admin to see booking requests """
 
-    list_display = ('booking_num',
-                    'apartment',
-                    'guest_name',
-                    'check_in',
-                    'check_out',
-                    'booking_created_on',
-                    'booking_approved')
+# class booking(admin.ModelAdmin):
+#     """ Add view for the admin to see booking requests """
 
+#     list_display = ('booking_num',
+#                     'apartment',
+#                     'guest_name',
+#                     'check_in',
+#                     'check_out',
+#                     'booking_created_on',
+#                     'booking_approved')
 
-class ShowFrontPhoto(SummernoteModelAdmin):
-    """ For admin to see which image has been uploaded """
-
-    media = 'front_image'
-
-
-admin.site.register(Rental)
+@admin.register(Rental)
 class RentalAdmin(admin.ModelAdmin):
     """ Model for class google maps """
     formfield_overrides = {

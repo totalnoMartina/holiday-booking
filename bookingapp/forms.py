@@ -1,14 +1,18 @@
 from django import forms
-from .models import APARTMENTS
 from django.forms import ModelForm
 from .models import Feedback
 
 # 2 forms = booking(vacantapartmentsform) and guest form
 
 class VacantApartmentsForm(forms.Form):
+    APARTMENTS = (('Tony', 'Tony Apartment for max4 people'),
+                ('Matea', 'Matea apartment for max4 people'),
+                ('Martina', 'Martina apartment for max6 people'))
+
+
     chosen_apartment = forms.ChoiceField(choices=APARTMENTS, required=True)
-    check_in = forms.DateField(required=True, input_formats=["%Y-%m-%dT", ])
-    check_out = forms.DateField(required=True, input_formats=["%Y-%m-%dT", ])
+    check_in = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT", ])
+    check_out = forms.DateTimeField(required=True, input_formats=["%Y-%m-%dT", ])
 
 
 class FeedbackForm(ModelForm):

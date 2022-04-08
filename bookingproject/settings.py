@@ -139,10 +139,11 @@ SOCIALACCOUNT_PROVIDERS = \
 SOCIAL_AUTH_FACEBOOK_ID = os.environ.get("SOCIAL_AUTH_FACEBOOK_ID")
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get("SOCIAL_AUTH_FACEBOOK_SECRET")
 
+
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = "home"
-# if you succeed in login, you'll be redirected to the main page.
+# When you succeed in login, you'll be redirected to the main page.
 
 
 # MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -174,8 +175,8 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_GOOGLE_PASSWORD')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
-
-# ACCOUNT_EMAIL_VERIFICATION = 'none'  -- something about 500 error
+#  something about 500 error
+ACCOUNT_EMAIL_VERIFICATION = 'none'  
 
 WSGI_APPLICATION = 'bookingproject.wsgi.application'
 
